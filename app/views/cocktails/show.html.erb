@@ -5,8 +5,13 @@
 
   <li><p><%= dose.description %></p></li>
   <li><p><%= dose.ingredient.name %></p></li>
+
+
+
+  <p><%= link_to "Delete Dose", dose_path(dose), method: :delete %></p>
   <% end %>
   </ul>
+
 
 
 <%= link_to "Preparation", new_cocktail_dose_path(@cocktail) %>
