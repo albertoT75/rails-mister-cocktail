@@ -3,18 +3,22 @@
   <h2><%@cocktail.doses.each do |dose| %></h2>
   <ul>
 
-  <li><p><%= dose.description %></p></li>
-  <li><p><%= dose.ingredient.name %></p></li>
-
-
-
-  <p><%= link_to "Delete Dose", dose_path(dose), method: :delete %></p>
+  <p><%= dose.description %> of <%= dose.ingredient.name %></p>
   <% end %>
   </ul>
 
+  <% if @cocktail.photo.present? %>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+   <% else %>
+   <%= cl_image_tag("kglf7jxiiqujbiioatxg",
+      width: 400, height: 300, crop: :fill) %>
+   <% end %>
+
+   <br>
 
 
-<%= link_to "Preparation", new_cocktail_dose_path(@cocktail) %>
+
+<h2><%= link_to "Doses", new_cocktail_dose_path(@cocktail) %></h2>
 <br>
 <h3><%= link_to "Back to My Cocktails", cocktails_path %></h3>
 

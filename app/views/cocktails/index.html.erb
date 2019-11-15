@@ -1,9 +1,21 @@
-<h1>My list of Cocktails</h1>
+
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1570036394455-f3f3f281e403?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1065&q=80);">
+  <div class="container">
+    <h1> Mc Cocktail  </h1>
+    <p><strong>Some serious cocktail making skills</strong></p>
+    <p>Change your life and learn to Mc Cocktails!</p>
+
+  </div>
+</div>
+<p><%= link_to "Add Cocktail", new_cocktail_path%></p>
 <% @cocktails.each do |cocktail| %>
   <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
 <% end %>
 
-<%= link_to "Add Cocktail", new_cocktail_path%>
+
+
+
 
 
 
